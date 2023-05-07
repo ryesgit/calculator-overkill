@@ -18,3 +18,5 @@ def calculator(num1, num2, mode):
     match mode:
         case 'add':
             return num1 + num2
+        case 'subtract':
+            return num1 - num2
