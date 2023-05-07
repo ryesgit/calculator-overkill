@@ -13,3 +13,8 @@ according to the mode (addition, subtraction, multiplication, and division) also
 3. Catch program errors! For example, the user must not be able to divide a number by zero.
 
 '''
+
+def calculator(num1, num2, mode):
+    match mode:
+        case 'add':
+            return num1 + num2
