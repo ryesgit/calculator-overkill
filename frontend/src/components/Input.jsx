@@ -20,7 +20,7 @@ const Input = () => {
             <Button className="numeral" content="8"><p>8</p></Button>
             <Button className="numeral" content="9"><p>9</p></Button>
             <Button className="others" content="clear"><p>CLEAR</p></Button>
-            <Button className="others" content="dot"><p>.</p></Button>
+            <Button className="numeral" content="dot"><p>.</p></Button>
             <Button className="others" content="equal"><p>=</p></Button>
             <Button className="numeral" content="0"><p>0</p></Button>
         </div>
