@@ -19,7 +19,6 @@ def calculator(num1, num2, mode):
     try:
         num1 = float(num1)
         num2 = float(num2)
-        pass
     except ValueError:
         return "You must input numbers!"
     match mode:
@@ -30,4 +29,7 @@ def calculator(num1, num2, mode):
         case 'multiply':
             return num1 * num2
         case 'divide':
-            return num1 / num2
+            try:
+                return num1 / num2
+            except ZeroDivisionError:
+                return "You are not allowed to divide by zero. Sorry!"
