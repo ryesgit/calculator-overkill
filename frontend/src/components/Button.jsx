@@ -8,15 +8,13 @@ const Button = ({className, content, children}) => {
     const handleButtonClick = (e) => {
 
         if(className == 'operator') {
-            console.log(number);
             // Add this number to the numbers to do operations to.
-            setNumbers(prev => prev.push(number))
+            setNumbers(prev => [...prev, number])
 
             // Clear number for new number setting
             setNumber('');
         } else if (className == 'numeral') {
             setNumber(prev => prev + e.target.textContent);
-            console.log(number);
         }
     }
 

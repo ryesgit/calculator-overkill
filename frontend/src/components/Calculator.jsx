@@ -6,7 +6,8 @@ import NumberContext from '../context/numberContext.js'
 const Calculator = () => {
     const [numbers, setNumbers] = useState([]);
     const [number, setNumber] = useState('');
-
+    const [operation, setOperation] = useState();
+    const [result, setResult] = useState();
   return (
     <div className=' aspect-square w-1/2 md:w-auto md:h-1/2 mx-auto my-auto'>
         <NumberContext.Provider value={{numbers, setNumbers, number, setNumber}}>
