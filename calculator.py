@@ -20,3 +20,5 @@ def calculator(num1, num2, mode):
             return num1 + num2
         case 'subtract':
             return num1 - num2
+        case 'multiply':
+            return num1 * num2
