@@ -15,6 +15,13 @@ according to the mode (addition, subtraction, multiplication, and division) also
 '''
 
 def calculator(num1, num2, mode):
+
+    try:
+        num1 = float(num1)
+        num2 = float(num2)
+        pass
+    except ValueError:
+        return "You must input numbers!"
     match mode:
         case 'add':
             return num1 + num2
