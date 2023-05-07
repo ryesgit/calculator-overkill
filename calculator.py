@@ -16,6 +16,9 @@ according to the mode (addition, subtraction, multiplication, and division) also
 
 def calculator(num1, num2, mode):
 
+    # If one of the arguments is missing, throw an error
+    if not(num1 and num2 and mode):
+        raise TypeError('Uh oh! Some of the arguments is missing.')
     try:
         num1 = float(num1)
         num2 = float(num2)
