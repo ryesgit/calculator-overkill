@@ -36,3 +36,5 @@ def calculator(num1, num2, mode):
                 return num1 / num2
             except ZeroDivisionError:
                 raise ZeroDivisionError("You are not allowed to divide by zero. Sorry!")
+        case _:
+            raise ValueError("Mode is not supported.")
