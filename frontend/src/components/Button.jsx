@@ -63,6 +63,12 @@ const Button = ({className, content, children}) => {
                         // Reset number
                     })();
                     setNumber('')
+
+                case 'CLEAR':
+                    setNumbers([]);
+                    setNumber('');
+                    setOperation('');
+                    setResult('');
             }
         }
     }
