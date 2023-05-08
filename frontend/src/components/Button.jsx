@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
 import NumberContext from "../context/numberContext.js";
+import { baseURL } from "../locals/constants.js";
 
 const Button = ({className, content, children}) => {
 
-    const { setNumbers, setNumber, number, setOperation } = useContext(NumberContext);
+    const { numbers, setNumbers, setNumber, number, operation, setOperation } = useContext(NumberContext);
 
     const handleButtonClick = (e) => {
 
@@ -28,8 +29,36 @@ const Button = ({className, content, children}) => {
 
             // Clear number for new number setting
             setNumber('');
-        } else if (className == 'numeral') {
+        } 
+        
+        else if (className == 'numeral') {
             setNumber(prev => prev + e.target.textContent);
+        }
+
+        else if(className == 'others') {
+
+            switch(e.target.textContent) {
+                case '=':
+                    
+                    (async() => {
+                        
+
+                            const data = {
+                                mode: operation,
+                                num1: numbers[0],
+                                num2: number
+                            }
+
+                            const res = await fetch(`${baseURL}/calculate`, {
+                            method: 'POST',
+                            body: JSON.stringify(data),
+                            headers: {
+                                "Content-Type": "application/json"
+                            }
+                        })
+                        console.log(await res.json());
+                    })();
+            }
         }
     }
 
