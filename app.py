@@ -12,14 +12,15 @@ def hello():
 
 @app.route('/calculate', methods=["POST"])
 def calculate():
-    req_body = request.json
-    print(req_body)
-    num1 = req_body.get('num1')
-    num2 = req_body.get('num2')
-    mode = req_body.get('mode')
-    result = calculator(num1, num2, mode)
-    print(result)
-    return jsonify(result), 200
+    try:
+        req_body = request.json
+        num1 = req_body.get('num1')
+        num2 = req_body.get('num2')
+        mode = req_body.get('mode')
+        result = calculator(num1, num2, mode)
+        return jsonify(result), 200
+    except ZeroDivisionError:
+        return jsonify("Division by Zero is not allowed"), 400
 
 if __name__ == '__main__':
     app.run()

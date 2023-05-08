@@ -35,4 +35,4 @@ def calculator(num1, num2, mode):
             try:
                 return num1 / num2
             except ZeroDivisionError:
-                return "You are not allowed to divide by zero. Sorry!"
+                raise ZeroDivisionError("You are not allowed to divide by zero. Sorry!")
