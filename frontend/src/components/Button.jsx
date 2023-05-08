@@ -56,7 +56,14 @@ const Button = ({className, content, children}) => {
                                 "Content-Type": "application/json"
                             }
                         })
+
+                        if(res.status == 400) {
+                            const error = await res.json();
+                            return alert(error)
+                        }
+
                         const result = await res.json();
+
                         setResult(result)
                         // Empty out numbers array
                         setNumbers([])
