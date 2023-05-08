@@ -10,7 +10,7 @@ const Calculator = () => {
     const [result, setResult] = useState();
   return (
     <div className=' aspect-square w-1/2 md:w-auto md:h-1/2 mx-auto my-auto'>
-        <NumberContext.Provider value={{numbers, setNumbers, number, setNumber, operation, setOperation}}>
+        <NumberContext.Provider value={{numbers, setNumbers, number, setNumber, operation, setOperation, result, setResult}}>
             <Output />
             <Input />
         </NumberContext.Provider>

@@ -4,7 +4,7 @@ import { baseURL } from "../locals/constants.js";
 
 const Button = ({className, content, children}) => {
 
-    const { numbers, setNumbers, setNumber, number, operation, setOperation } = useContext(NumberContext);
+    const { numbers, setNumbers, setNumber, number, operation, setOperation, setResult } = useContext(NumberContext);
 
     const handleButtonClick = (e) => {
 
@@ -56,8 +56,13 @@ const Button = ({className, content, children}) => {
                                 "Content-Type": "application/json"
                             }
                         })
-                        console.log(await res.json());
+                        const result = await res.json();
+                        setResult(result)
+                        // Empty out numbers array
+                        setNumbers([])
+                        // Reset number
                     })();
+                    setNumber('')
             }
         }
     }
