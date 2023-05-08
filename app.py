@@ -21,6 +21,10 @@ def calculate():
         return jsonify(result), 200
     except ZeroDivisionError:
         return jsonify("Division by Zero is not allowed"), 400
+    except TypeError:
+        return jsonify("Some of the arguments are missing"), 400
+    except ValueError:
+        return jsonify("Numeric arguments should be numbers, operation must be either of the following: 'add', 'subtract', 'multiply', 'divide'")
 
 if __name__ == '__main__':
     app.run()
