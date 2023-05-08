@@ -24,7 +24,7 @@ def calculate():
     except NameError:
         return jsonify("Some of the arguments are missing"), 400
     except ValueError:
-        return jsonify("Numeric arguments should be numbers, operation must be either of the following: 'add', 'subtract', 'multiply', 'divide'")
+        return jsonify("Numeric arguments should be numbers, operation must be either of the following: 'add', 'subtract', 'multiply', 'divide'"), 400
 
 if __name__ == '__main__':
     app.run()
